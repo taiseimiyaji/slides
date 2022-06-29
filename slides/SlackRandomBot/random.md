@@ -49,12 +49,12 @@ https://developers.google.com/apps-script/guides/libraries
 ---
 
 ## 作成の流れ
-![AppScript](../images/7444327aa3f8da780521a3eacaba873ad877d2e50b099dd136131e600ac960aa.png)  
+![AppScript](../../images/7444327aa3f8da780521a3eacaba873ad877d2e50b099dd136131e600ac960aa.png)  
 
 
 ---
 
-![picture 2](../images/d16f5dc4473a05a127a2be0e90f4c344011a340e67b71cf94b7cc8dc44ad4f70.png)  
+![picture 2](../../images/d16f5dc4473a05a127a2be0e90f4c344011a340e67b71cf94b7cc8dc44ad4f70.png)  
 
 ---
 
@@ -80,7 +80,7 @@ Slackアプリ導入申請が必要ですので割愛します
 
 ---
 
-![height:600](../images/4a4fbf73d3d2640bc3b22f4b087d42fdccfe5be7445e2d0125cd72ba3150fe4e.png)  
+![height:600](../../images/4a4fbf73d3d2640bc3b22f4b087d42fdccfe5be7445e2d0125cd72ba3150fe4e.png)  
 
 
 ---
@@ -91,7 +91,7 @@ Slackアプリ導入申請が必要ですので割愛します
 
 ランダムを実現するためにシートに対象となるメンバーのIDを用意します。
 この形式で書くことでメンションが当たります。
-![picture 4](../images/75eb723402d95b49f0751a60b5ebb1bd97b4116c9efc53075bfb69865b22df4c.png)  
+![picture 4](../../images/75eb723402d95b49f0751a60b5ebb1bd97b4116c9efc53075bfb69865b22df4c.png)  
 
 ---
 コードからシートの情報へのアクセスにはIDが必要
@@ -146,7 +146,7 @@ function getRandomInt(min, max) {
 - チャンネルへメンションを当てることができていない
 
 ---
-![height:500](../images/cf437d30b98c608f16cff7dfc2990b02d135ef93bb3880def129e03fc0707d75.png)  
+![height:500](../../images/cf437d30b98c608f16cff7dfc2990b02d135ef93bb3880def129e03fc0707d75.png)  
 
 ---
 
