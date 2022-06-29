@@ -30,7 +30,7 @@ https://github.com/soundTricker/SlackApp
 作者のQiita記事
 https://qiita.com/soundTricker/items/43267609a870fc9c7453
 
-- 基本的に`slackApp`ライブラリはSlackAPIと同じメソッド名で実装されている。
+- 基本的に`SlackApp`ライブラリはSlackAPIと同じメソッド名で実装されている。
 
 ---
 
@@ -59,7 +59,7 @@ https://developers.google.com/apps-script/guides/libraries
 ---
 
 ## slackにメッセージを投稿するために必要な情報
-- postUrl: 'https://slack.com/api/chat.postMessage' // 実行するAPIのエンドポイント
+
 - token: slackのアクセストークン
 - channelId: チャンネルID
 - userName: 投稿するBotの名前
@@ -96,11 +96,11 @@ Slackアプリ導入申請が必要ですので割愛します
 ---
 コードからシートの情報へのアクセスにはIDが必要
 ```JS
-var sheet = SpreadsheetApp.openById("スクリプトID").getActiveSheet()
+var sheet = SpreadsheetApp.openById("スプレッドシートID").getActiveSheet()
 ```
-スクリプトIDとは
+スプレッドシートIDとは
 ```
-https://docs.google.com/spreadsheets/d/スクリプトID/edit#gid=0
+https://docs.google.com/spreadsheets/d/スプレッドシートID/edit#gid=0
 ```
 ---
 
@@ -110,6 +110,7 @@ var lastrow = sheet.getLastRow();
 var lastcol = sheet.getLastColumn();
 var sheetdata = sheet.getSheetValues(1, 1, lastrow, lastcol);
 ```
+※sheet.getSheetValues([開始行], [開始列], [行数], [列数])のように指定します。
 
 ---
 ランダムに数値を出力するアルゴリズム
@@ -152,5 +153,48 @@ function getRandomInt(min, max) {
 
 # まとめ
 - 小規模なものであれば時間をかけずに便利なものを作りやすい
-- 非エンジニアがプログラミング初めてみるって時には向いているかも
+- 非エンジニアでも簡単に始められる
 
+---
+### コードサンプル
+
+```JS
+var slack = {
+  token: 'トークン',
+  channelId: 'チャンネルID'
+  userName: "ランダム司会Bot",
+}
+const SATURDAY = 6;
+const SUNDAY = 0;
+const MONDAY = 1;
+
+const RANDOM_MIN = 1;
+const RANDOM_MAX = 4;
+var sheet = SpreadsheetApp.openById("スプレッドシートID").getActiveSheet();
+var lastrow = sheet.getLastRow();
+var lastcol = sheet.getLastColumn();
+var sheetdata = sheet.getSheetValues(1, 1, lastrow, lastcol);
+
+function RANDOMBOT() {
+  var today = new Date();
+  if(today.getDay() == SUNDAY || today.getDay() == SATURDAY){
+    return;
+  }
+  var row = getRandomInt(RANDOM_MIN, RANDOM_MAX + 1);
+
+  Logger.log(row);
+  var Name = sheetdata[row];
+  var Message = "今日の司会は…" + Name + "さんです。よろしくお願いします。";
+  if(today.getDay() === MONDAY){
+    Message = Message + "\n本日の定例会の議事も合わせてお願いします。"
+  }
+  var slackApp = SlackApp.create(slack["token"]);
+  slackApp.postMessage(slack["channelId"], Message, {username : slack["userName"]});
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+```
