@@ -160,9 +160,9 @@ function getRandomInt(min, max) {
 
 ```JS
 var slack = {
-  token: 'トークン',
-  channelId: 'チャンネルID'
-  userName: "ランダム司会Bot",
+  token: 'トークン', // 実際のトークンを指定してください。
+  channelId: 'チャンネルID' // 投稿するチャンネルIDを指定してください。
+  userName: "ランダム司会Bot", //投稿するBotの名前を指定してください
 }
 const SATURDAY = 6;
 const SUNDAY = 0;

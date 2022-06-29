@@ -194,9 +194,9 @@
 <header>GASでランダムに司会を決定するSlackBotを作った話</header>
 <h3>コードサンプル</h3>
 <pre><code class="language-JS"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">var</span> slack = {
-  <span class="hljs-attr">token</span>: <span class="hljs-string">&#x27;トークン&#x27;</span>,
-  <span class="hljs-attr">channelId</span>: <span class="hljs-string">&#x27;チャンネルID&#x27;</span>
-  <span class="hljs-attr">userName</span>: <span class="hljs-string">&quot;ランダム司会Bot&quot;</span>,
+  <span class="hljs-attr">token</span>: <span class="hljs-string">&#x27;トークン&#x27;</span>, <span class="hljs-comment">// 実際のトークンを指定してください。</span>
+  <span class="hljs-attr">channelId</span>: <span class="hljs-string">&#x27;チャンネルID&#x27;</span> <span class="hljs-comment">// 投稿するチャンネルIDを指定してください。</span>
+  <span class="hljs-attr">userName</span>: <span class="hljs-string">&quot;ランダム司会Bot&quot;</span>, <span class="hljs-comment">//投稿するBotの名前を指定してください</span>
 }
 <span class="hljs-keyword">const</span> SATURDAY = <span class="hljs-number">6</span>;
 <span class="hljs-keyword">const</span> SUNDAY = <span class="hljs-number">0</span>;
