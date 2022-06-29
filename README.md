@@ -1,2 +1,0 @@
-# slides
-marp slides repository
